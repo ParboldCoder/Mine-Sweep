@@ -1,0 +1,83 @@
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  margin: 0;
+  background-color: #f0f0f0;
+  font-family: 'Arial', sans-serif;
+}
+
+#game-container {
+  text-align: center;
+}
+
+#board {
+  display: grid;
+  gap: 1px;
+  grid-template-columns: repeat(15, 30px);
+  grid-template-rows: repeat(15, 30px);
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+.cell {
+  width: 30px;
+  height: 30px;
+  border: 1px solid #ccc;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 14px;
+  cursor: pointer;
+  user-select: none;
+  background-color: #eee;
+  transition: background-color 0.3s ease-in-out;
+}
+
+.cell:hover {
+  background-color: #ddd;
+}
+
+.hidden {
+  background-color: #ccc;
+  box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.1);
+}
+
+.mine {
+  background-color: #d9534f;
+  color: #fff;
+}
+
+.flagged {
+  background-color: #5bc0de;
+  color: #fff;
+}
+
+#board.winner {
+  animation: pulse 0.5s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+}
+
+#difficulty-buttons {
+  margin-top: 10px;
+}
+
+#difficulty-buttons button {
+  margin: 0 5px;
+  padding: 5px 10px;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+#restartButton {
+  margin-top: 10px;
+}
